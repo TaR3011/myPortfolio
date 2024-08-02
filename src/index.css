@@ -1,0 +1,18 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+}
+
+.nav_container {
+  position: absolute;
+  top: 0;
+
+  .ul {
+    background-color: red;
+  }
+} */
