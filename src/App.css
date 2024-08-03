@@ -7,6 +7,7 @@
 :root {
   --primary_color: #0b7285;
   --secondary_color: #3c8e9d;
+  --main_color: rgb(249 250 251);
   --nav_color: #ffffffb2;
   --mint_color: #f4fff8;
   --night_color: #000f08;
@@ -15,9 +16,10 @@
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: var(--main_color);
   width: 100%;
   font-size: 16px;
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
 
 /* navbar style */
@@ -55,6 +57,13 @@ body {
       }
     }
   }
+}
+
+.nav_btn {
+  border: none;
+  background-color: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 img {
@@ -103,13 +112,13 @@ section {
           padding: 0.5rem 1rem;
           border-radius: 50rem;
           border: none;
-          color: #e1e1e1;
-          background-color: var(--btn_color);
+          color: var(--main_color);
+          background-color: var(--secondary_color);
           cursor: pointer;
         }
 
         button:hover {
-          background-color: #4a2740;
+          background-color: var(--primary_color);
         }
       }
     }
@@ -145,7 +154,7 @@ section {
   justify-content: center;
   height: 12rem;
   padding: 2rem;
-  padding-top: 0;
+  padding-top: 1rem;
   margin: 5rem 20rem;
   background-color: #3c8f9d61;
   border-radius: 20px;
@@ -185,6 +194,7 @@ section {
 
   p {
     font-size: 1.1rem;
+    text-align: center;
     font-weight: 500;
     color: var(--night_color);
   }
@@ -206,14 +216,130 @@ section {
       background-color: white;
       border-radius: 9999px;
 
-      p {
-        font-weight: 700;
+      img {
+        width: 3rem;
+        height: 3rem;
+        margin: 0;
       }
 
-      p:hover {
-        transform: scale(1.5);
+      img:hover {
+        transform: scale(1.1);
       }
     }
+  }
+}
+
+/* projects style */
+.projects_section {
+  width: 100%;
+  padding: 1.2rem;
+  display: grid;
+  /* align-items: center;
+  justify-content: start;
+  gap: 3rem;
+  flex-wrap: wrap; */
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.8rem;
+  row-gap: 0.8rem;
+}
+
+/* projectCard style */
+.project_container {
+  background-color: white;
+  /* padding: 1rem;
+  padding-bottom: 0.5rem; */
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
+  gap: 1rem;
+
+  .info_section {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    h4 {
+      color: var(--night_color);
+    }
+    img {
+      margin: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+    }
+  }
+
+  .links_section {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #607d8b1a;
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+
+    button {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.5rem;
+      border-radius: 5px;
+      border: none;
+      color: var(--main_color);
+      background-color: var(--secondary_color);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3c8f9db7;
+    }
+  }
+}
+
+/* contact form style */
+
+.contact_section {
+  width: 100%;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input,
+  textarea {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    padding: 0.7rem;
+    border: 1px solid var(--secondary_color);
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    height: 10rem;
+    resize: vertical;
+  }
+
+  button {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary_color);
+    color: var(--night_color);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: var(--primary_color);
   }
 }
 
@@ -241,8 +367,6 @@ section {
   section .container .img_section {
     grid-row: 1/2;
   }
-  section .container .text_section {
-  }
 
   .about_container,
   .skills_container {
@@ -250,15 +374,52 @@ section {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 568px) {
   .nav_container {
-    flex-direction: column;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
     height: auto;
     gap: 1rem;
   }
 
   .nav_container ul li {
     margin: 0 1rem;
+  }
+
+  .nav_container ul li a {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .nav_btn {
+    background-color: transparent;
+    color: #0b7285;
+    visibility: visible;
+    opacity: 1;
+    margin-left: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .nav_container .nav_list {
+    background-color: var(--main_color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 9999;
+    transition: 1s;
+    transform: translateY(-100vh);
+  }
+
+  .nav_container .nav_list.responsive_nav {
+    transform: none;
   }
 
   section .container .text_section h1 {
@@ -275,19 +436,20 @@ section {
   }
 
   .about_container {
-    padding: 0.8rem;
+    height: auto;
+    padding: 0.5rem;
     align-items: center;
   }
 
   .about_container h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-bottom: 0.5rem;
   }
 
   .about_container p {
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   .skills_container {
@@ -296,10 +458,10 @@ section {
   }
 
   .skills_container h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   .skills_container p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 500;
     text-align: center;
   }
@@ -310,5 +472,25 @@ section {
   .skills_container .skills_img h4 {
     width: 4.4rem;
     height: 4.4rem;
+  }
+
+  .projects_section {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.3rem;
+    row-gap: 0.7rem;
+    column-gap: 0.7rem;
+  }
+
+  .project_container {
+    gap: 0.5rem;
+    .info_section {
+      flex-direction: column;
+      align-items: self-start;
+    }
+
+    .links_section {
+      padding: 0.7rem;
+      gap: 0.5rem;
+    }
   }
 }

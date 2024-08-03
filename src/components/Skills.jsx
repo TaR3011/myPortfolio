@@ -1,7 +1,16 @@
-const ss = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+import html from "../assets/icons/html.png";
+import css from "../assets/icons/css.png";
+import js from "../assets/icons/js.png";
+import react from "../assets/icons/react.png";
+import redux from "../assets/icons/redux.png";
+import api from "../assets/icons/api.png";
+import node from "../assets/icons/node.png";
+import postman from "../assets/icons/postman.png";
+
+const ss = [html, css, js, react, redux, api, node, postman];
 const Skills = () => {
   return (
-    <div className="skills_container">
+    <div id="skills" className="skills_container">
       <div className="skills_text">
         <h1>مهاراتي</h1>
         <p>
@@ -13,7 +22,7 @@ const Skills = () => {
       <div className="skills_img">
         {ss.map((s) => (
           <h4>
-            <p>{s}</p>
+            <img src={s} />
           </h4>
         ))}
       </div>
