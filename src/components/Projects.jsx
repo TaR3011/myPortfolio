@@ -3,6 +3,12 @@ import ProjectCard from "./ProjectCard";
 const Projects = () => {
   const ProjectsInfo = [
     {
+      name: "تطبيق نوتاتي",
+      img: "https://firebasestorage.googleapis.com/v0/b/projectsimage-e386d.appspot.com/o/notaty.png?alt=media&token=752d68cb-08e5-4c1e-a923-650333ede92e",
+      git: "https://github.com/TaR3011/Notaty-app/tree/main",
+      live: "https://notaty.netlify.app/",
+    },
+    {
       name: "تطبيق قائمة المهام",
       img: "https://firebasestorage.googleapis.com/v0/b/projectsimage-e386d.appspot.com/o/todo.png?alt=media&token=d9b091ce-3c86-40e5-9687-d49151d399dd",
       git: "https://github.com/TaR3011/TaR_Todos",
